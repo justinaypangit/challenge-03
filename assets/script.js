@@ -15,7 +15,9 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   /////////////////////////// WRITE YOUR CODE HERE /////////////////////////
+  // window.prompt pops up a window determing what the user would like to input
   var lengthChoice = window.prompt("Enter how many characters should your password should be.");
+  // if statments dictate the flow of the code and what happens there are different events depending on the inputs
   if (lengthChoice >= 8 || lengthChoice <= 128) {
     var lower = confirm("Would you like to use lowercase characters?");
     var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -46,12 +48,14 @@ function generatePassword() {
         var password = "";
         var characters = characterChoice;
         var passwordLength = lengthChoice;
+        // for loops create a code that runs continuously until the max amount stated
         for (var i = 0; i < passwordLength; i++){
           password += characters.charAt(Math.floor(Math.random() * passwordLength));
         }
         document.getElementById("password").textContent = generatePassword(passwordLength);
         return password;
       }
+      // else statements go along with if statements and direct the code a different direction when not in sync with the if statement
       else {
         alert("Please select one of the options.")
       }
